@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Create Task
+{% endblock %}
+
+{% block content %}
+    <h1>Create task</h1>
+    <form method="post"
+          <input type="text" placeholder="Input Name" class="form-control"><br>
+          <textarea placeholder="Add description" class="form-control"></textarea><br>
+          <button type="submit" class="btn-success">Add</button>
+    </form>
+{% endblock %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h1>Page1</h1>
+    <p>Page1</p>
+    {% block content %}{% endblock %}
+
+</body>
+</html>
