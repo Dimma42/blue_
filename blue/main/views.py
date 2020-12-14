@@ -13,3 +13,6 @@ def about(request):
 
 def create(request):
     return render(request, 'main/create.html')
+
+def user_login(request):
+    return render(request, 'main/register.html')

@@ -22,11 +22,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main.apps.MainConfig',
 ]
 
 MIDDLEWARE = [
@@ -65,16 +66,20 @@ WSGI_APPLICATION = 'blue.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'django',
-        #'USER': 'root',
-        #'PASSWORD': '',
-        #'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blue_mysql',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
+
+#AUTHENTICATION_BACKENDS = (#10
+#    'django.contrib.auth.backends.ModelBackend',#10
+ #   'allauth.account.auth_backends.AuthenticationBackend',#10
+#)#10
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -113,3 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+#SITE_ID = 1
+
+AUTH_USER_MODEL = 'main.CustomUser'#11
+
