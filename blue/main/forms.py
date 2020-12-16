@@ -23,24 +23,3 @@ class UserRegisterForm(UserCreationForm):
 
 
 
-class SignUpForm(UserCreationForm):
-    full_name = forms.CharField(max_length=100, help_text='Required. 100 charaters of fewer.')
-
-    class Meta:
-        #model = CustomUser
-        model = User
-        fields = UserCreationForm.Meta.fields + ('username',)
-        field_classes = {'username': UsernameField}
-    def __init__(self, *args, **kwargs):
-        super().__init__( *args, **kwargs)
-        if self.meta.model.USERNAME_FIELD in self.fields:
-            self.fields[self._meta.model.USERNAME_FIELD].widget.attrs['autofocus']=True
-    def clean_password2(self):
-        password1 = self.cleaned_data.get("password1")
-        password2 = self.cleaned_data.get("password2")
-        if password1 and password2 and password1 != password2:
-            raise form.ValidationError(
-                self.error_message['password_mismath'],
-                code='password_masmatch',
-            )
-        return password2
