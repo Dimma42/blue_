@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
+from django.contrib.auth import login, logout
+from django.contrib import messages
 from .models import ticket
 from .forms import UserRegisterForm, UserLoginForm
-from django.contrib.auth import login, logout
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def index(request):
@@ -34,7 +36,7 @@ def register(request):
         else:
             messages.error(request, 'Error')
     else:
-        from = UserRegisterForm()
+        form = UserRegisterForm()
     return render(request, 'blue/register.html', {"form": form})
 
 
