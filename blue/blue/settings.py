@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'blue',
 ]
 
 MIDDLEWARE = [
@@ -120,5 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #SITE_ID = 1
 
-AUTH_USER_MODEL = 'main.CustomUser'#11
 
+AUTH_USER_MODEL = 'main.CustomUser'

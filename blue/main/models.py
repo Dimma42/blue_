@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class ticket(models.Model):
+    objects = None
     title = models.CharField('Name', max_length=50)
     ticket = models.TextField('Description')
 
@@ -16,5 +17,5 @@ class ticket(models.Model):
 
 
 class CustomUser(AbstractUser):
-    full_name = models.CharField(max_length=100, blank=False)
-    age = models.PositiveIntegerField(null=True, blank=True)
+    full_name = models.CharField(max_length=50, blank=False)
+    #age = models.PositiveIntegerField(null=True, blank=True)
