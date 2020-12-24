@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.contrib.auth import login, logout
 from django.contrib import messages
-from .models import ticket
+#from .models import ticket
 from .forms import UserRegisterForm, UserLoginForm
 
 
@@ -21,8 +21,8 @@ def create(request):
     return render(request, 'main/create.html')
 
 
-def user_login(request):
-    return render(request, 'main/register.html')
+#def user_login(request):
+#    return render(request, 'main/register.html')
 
 
 def register(request):

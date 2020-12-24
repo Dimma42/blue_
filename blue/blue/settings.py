@@ -122,4 +122,4 @@ STATIC_URL = '/static/'
 #SITE_ID = 1
 
 
-AUTH_USER_MODEL = 'main.CustomUser'
+#AUTH_USER_MODEL = 'main.CustomUser'
